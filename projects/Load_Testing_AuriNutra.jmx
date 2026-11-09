@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="AURI NUTRA">
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="base_url" elementType="Argument">
+            <stringProp name="Argument.name">base_url</stringProp>
+            <stringProp name="Argument.value">https://auri-nutra.aninda.me/</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <stringProp name="HTTPSampler.domain">auri-nutra.aninda.me</stringProp>
+        <stringProp name="HTTPSampler.protocol">https</stringProp>
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Accept</stringProp>
+            <stringProp name="Header.value">application/json</stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Content-Type</stringProp>
+            <stringProp name="Header.value">application/json</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+        <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+        <boolProp name="clearEachIteration">true</boolProp>
+        <boolProp name="useExpires">true</boolProp>
+        <boolProp name="CacheManager.controlledByThread">false</boolProp>
+      </CacheManager>
+      <hashTree/>
+      <DNSCacheManager guiclass="DNSCachePanel" testclass="DNSCacheManager" testname="DNS Cache Manager" enabled="true">
+        <collectionProp name="DNSCacheManager.servers"/>
+        <collectionProp name="DNSCacheManager.hosts"/>
+        <boolProp name="DNSCacheManager.clearEachIteration">false</boolProp>
+        <boolProp name="DNSCacheManager.isCustomResolver">false</boolProp>
+      </DNSCacheManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <intProp name="ThreadGroup.num_threads">15</intProp>
+        <intProp name="ThreadGroup.ramp_time">30</intProp>
+        <longProp name="ThreadGroup.duration">480</longProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="RespTimeGraphVisualizer" testclass="ResultCollector" testname="Response Time Graph" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="get_in_touch" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="get_in_touch/api/contact-82">
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.path">/api/contact</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;first_name&quot;:&quot;cRaktEwhTSJsiDMtlFyUXi&quot;,&quot;phone_number&quot;:&quot;+15555555555&quot;,&quot;email&quot;:&quot;randombot92837@tempmailtest.com&quot;,&quot;brand&quot;:&quot;AuriNutra&quot;,&quot;subject&quot;:&quot;FREE CONSULTATION OFFER CLICK NOW&quot;,&quot;message&quot;:&quot;Hello,\nI am interested in your services.\nPlease contact me immediately.\nBUY NOW CLICK HERE https://example.com&quot;,&quot;company&quot;:&quot;RetailInsite123&quot;,&quot;turnstile_token&quot;:&quot;1.dn9arYIxezbBHJFBQJ0U3e-pkZgCfMXGvUNF0o0KuWLqwRGujbng963_G4xnodkZIpAbS7JCpV6PrnEViSmmIS7BUpuZoN8bP9TvLOBwUg4h4AMmzlObQ0BPjTwGhBVeoS9s7DRYATOIDDzGqyReXibVSXEqp5FKimNRbKZFrLDa3wfRIQOBc8h6HZkozkJZAFJnQ1PlrzI65255r3dVa_I3yxnDomX3J6PW3hghvxEHlsOAg2Y7IO2-SHTefPjbJ0oajm7GzmFBsY7waZdmA8OynEmD7J_YA7vr_OHb9w2_979Fz-NnwlzHNSgUyX8gLUnHTC-LH-lmns4UEzn7qITDs7K6f_9CAIGgY1Cs75mDOR85aBcJ8Bf3FYKWBr2gKMmeShlI6uBaCBgJzgcvlKlMRYDy4H71mNNvfywX_K91y7rQ90dqRgtLhu88EKTiKOrCbHVyYRjFypOH9DvcFWWTqW8Ef8JY-wQq6ZQ_oTbRXQn1kzXDzYMM-gIZwEp7T_ack7eZ59jtNeLpr4SstkMwuoYqJLJGnvnvH5ZMWT3AUlmIiVHcqm5ImMDeDf83E0N1RjuL1yvn8gcypMRf72OmZwTK0yqgSP9z70dxCNBNRCBLm-EwgE00V0MaH_KgoDpqmASnGG9rv6mMtyeIs7zvBwl8qvsUMqZawiGV9qIRPJHMeIWNKLK-qPJgxKm6w7RW2kWTCfNCUDrHwiKBvw.NENw8vFxIfIIFixgC_WtRw.49ef66eecb241e9738b5b23efdb3c5584c18bd2824753b709fb7afc5be72ef02&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="get_a_quote" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="get_a_quote/api/request-quote-209">
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.path">/api/request-quote</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;product_name&quot;:&quot;cRaktEwhTSJsiDMtlFyUXi&quot;,&quot;serving_size&quot;:&quot;999999 capsules&quot;,&quot;servbottle_or_bulk&quot;:&quot;abc123xyz&quot;,&quot;product_format&quot;:&quot;Stock Formula&quot;,&quot;order_quantity&quot;:&quot;999999999&quot;,&quot;target_price_point&quot;:&quot;$0.01&quot;,&quot;time_frame_to_start_manufacturing&quot;:&quot;Foreseeable Future (6-12 weeks)&quot;,&quot;is_there_an_allergy_claim&quot;:&quot;No&quot;,&quot;how_did_you_hear_about_us&quot;:&quot;Google&quot;,&quot;company_name&quot;:&quot;RetailInsite Global Solutions 92837&quot;,&quot;website&quot;:&quot;http://fake-company-test123.com&quot;,&quot;first_name&quot;:&quot;Xyzbot&quot;,&quot;last_name&quot;:&quot;Automation999&quot;,&quot;email&quot;:&quot;spamtest92837@tempmailtest.com&quot;,&quot;phone&quot;:&quot;+10000000000&quot;,&quot;comments&quot;:&quot;This is an automated spam submission test.\nBUY NOW!!!\nFREE CONSULTATION!!!\nCLICK HERE!!!&quot;,&quot;additional_details&quot;:&quot;&lt;p&gt;&lt;strong&gt;FREE PRODUCT OFFER!!!&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Need urgent manufacturing.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Visit https://spam-test-example.com&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Contact immediately.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&lt;/strong&gt;&lt;/p&gt;&quot;,&quot;turnstile_token&quot;:&quot;1.dTekIpL-wytbRlezbN34gI0skjj4iyhnjmy3lTex5zB8RH2IqoxCky0FwReVzZmC6Y5PX_LHe-pYljvm_Ni2uSpvc-7sLNP-7nxl-ErMzp_yb8JNVHJQpOP8U6VHGDpFtvkux83N2ysXZ41k0HQyo1YyoOpepJgCEWZ_zsisLTeUkVpxPxeYgo2BziZoL7nQIM8LXthreG5MdHI-UjtyBIzN5DOcEo-MT6qK4linadYO9nLSD0lLFED2MSQqpWZGwddVw5MZmGECi9oVN8S5I8ZiYHukUFiAuyB3ln8EA7Zots6cMcPKnRIAlRmWwUf6rCOkvk2HrcbjwD59hY0pf1cXmadSoOpndrwbFBvAaAr-tNCZa7fNMOlMRrxO2ZxcZAOtlV3oJGbCcQbDpIL2hMKGwb0kpSINw_t2M9VpDM1J8eV-id4YevrFPudE46bTPlHWy-i0efyslnSb_6xVhnzowjr_nuJjds_v6RC8Zo4XSGPrc3n3GWK7B8pDvM_xiUYci7dD5jNaC2iv0yo_UQ9mwSV_vbch0_0nlOo250xxYFPAZw8T_11arPRDnMYW8rDX_3SUFNYNeHacxgOU0FfoystIzteiZ3-izKFEgLZF38DQSbWykmDxYqWtfu2OgjQhPjdMMBtjjDIkWUpI7N9tmsNfGG6TJ9jmdfvUMC5uxW9A8VcNAY1GBEmoH-EBNsB1hf2fJRkeAZMrdCKuhg.-AyOOAC_5PxG7_cDKig6Tw.f5018563ffea71c1c5633be1eca4a92f30f393fd85ce516e170043b22b17fd78&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ProxyControl guiclass="ProxyControlGui" testclass="ProxyControl" testname="HTTP(S) Test Script Recorder">
+        <stringProp name="ProxyControlGui.port">8888</stringProp>
+        <collectionProp name="ProxyControlGui.exclude_list">
+          <stringProp name="-453451495">\.(png|jpg|jpeg|gif|bmp|webp|css|js|map|woff|woff2|ttf|eot)  # Static files like images, fonts, etc.</stringProp>
+          <stringProp name="30429994">\/socket.io\/.*  # WebSocket traffic</stringProp>
+          <stringProp name="808545427">\/chrome-sync\/  # Chrome sync traffic</stringProp>
+          <stringProp name="1664108751">\/assets\/  # Static assets</stringProp>
+          <stringProp name="-1480833306">\/google-analytics\/.*|\/facebook\/.*|\/analytics\/.*|\/ads\/.*  # External tracking and analytics</stringProp>
+          <stringProp name="-672630582">\/telemetry\/.*|\/tracking\/.*|\/metrics\/.*  # Telemetry/metrics traffic</stringProp>
+          <stringProp name="476184669">\/uploads\/  # File uploads</stringProp>
+          <stringProp name="-1404480889">\/leaks:lookupSingle  # Specific endpoint</stringProp>
+          <stringProp name="-197115974">\/v1\/issuetoken  # Token endpoint</stringProp>
+          <stringProp name="-1640906474">\/downloads  # Downloads</stringProp>
+          <stringProp name="-641352929">(?i).*\.(bmp|css|js|gif|ico|jpe?g|png|swf|woff|woff2)  # Case-insensitive static files like images, scripts, etc.</stringProp>
+        </collectionProp>
+        <collectionProp name="ProxyControlGui.include_list"/>
+        <boolProp name="ProxyControlGui.capture_http_headers">true</boolProp>
+        <intProp name="ProxyControlGui.grouping_mode">0</intProp>
+        <boolProp name="ProxyControlGui.add_assertion">false</boolProp>
+        <stringProp name="ProxyControlGui.sampler_type_name"></stringProp>
+        <boolProp name="ProxyControlGui.sampler_redirect_automatically">false</boolProp>
+        <boolProp name="ProxyControlGui.sampler_follow_redirects">true</boolProp>
+        <boolProp name="ProxyControlGui.use_keepalive">true</boolProp>
+        <boolProp name="ProxyControlGui.detect_graphql_request">true</boolProp>
+        <boolProp name="ProxyControlGui.sampler_download_images">false</boolProp>
+        <intProp name="ProxyControlGui.proxy_http_sampler_naming_mode">0</intProp>
+        <stringProp name="ProxyControlGui.default_encoding"></stringProp>
+        <stringProp name="ProxyControlGui.proxy_prefix_http_sampler_name">get_a_quote</stringProp>
+        <stringProp name="ProxyControlGui.proxy_pause_http_sampler"></stringProp>
+        <boolProp name="ProxyControlGui.notify_child_sl_filtered">false</boolProp>
+        <boolProp name="ProxyControlGui.regex_match">false</boolProp>
+        <stringProp name="ProxyControlGui.content_type_include"></stringProp>
+        <stringProp name="ProxyControlGui.content_type_exclude"></stringProp>
+        <stringProp name="ProxyControlGui.domains">auri-nutra.aninda.me</stringProp>
+      </ProxyControl>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
