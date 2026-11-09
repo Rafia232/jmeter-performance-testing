@@ -23,8 +23,6 @@ Suggested structure:
 │       ├── test-plans/
 │       ├── test-data/
 │       └── results/
-└── docs/
-    └── test-notes.md
 ```
 
 Adjust the structure as more projects and test scenarios are added.
